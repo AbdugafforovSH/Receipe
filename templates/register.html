@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+      <div class="container registration form" >
+          <header>Signup</header>
+          <form action="{% url "register" %}" method="POST">
+            <input name="username" type="text" placeholder="Username kiriting">
+            <input name="email" type="email" placeholder="Email kiriting">
+            <input name="password" type="password" placeholder="Parol yarating">
+            <input name="password1" type="password" placeholder="Parolni tasdiqlang">
+            <input type="submit" class="button" value="Signup">
+          </form>
+          <div class="signup">
+            <span class="signup">Already have an account?
+            <a href="{% url "login" %}">Login</a>
+            </span>
+          </div>
+        </div>
+</body>
+</html>

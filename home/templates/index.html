@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- ##### Hero Area Start ##### -->
+  <section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(/static/img/bg-img/bg1.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                            <a href="receipe-post" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">Retseptni ko'rish</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(/static/img/bg-img/bg6.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                            <a href="receipe-post" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">Retseptni ko'rish</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(/static/img/bg-img/bg7.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                            <a href="receipe-post" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">Retseptni ko'rish</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Top Catagory Area Start ##### -->
+<section class="top-catagory-area section-padding-80-0">
+    <div class="container">
+        <div class="row">
+            <!-- Top Catagory Area -->
+            <div class="col-12 col-lg-6">
+                <div class="single-top-catagory">
+                    <img src="/static/img/bg-img/bg2.jpg" alt="">
+                    <!-- Content -->
+                    <div class="top-cta-content">
+                    <h3>Qulupnayli tort</h3>
+                        <h6>Shunchaki &amp; mazali</h6>
+                        <a href="receipe-post.html" class="btn delicious-btn">To'liq retsetni ko'rish</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Catagory Area -->
+            <div class="col-12 col-lg-6">
+                <div class="single-top-catagory">
+                    <img src="/static/img/bg-img/bg3.jpg" alt="">
+                    <!-- Content -->
+                    <div class="top-cta-content">
+                        <h3>Chinesse Noodles</h3>
+                        <h6>Simple &amp; Delicios</h6>
+                        <a href="receipe-post" class="btn delicious-btn">To'liq retsetni ko'rish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Top Catagory Area End ##### -->
+
+<!-- ##### Best Receipe Area Start ##### -->
+<section class="best-receipe-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Eng yaxshi retsept</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="{{ recipe.image.url }}" alt="">
+                    <div class="receipe-content">
+                        <a href="{% url 'recipe-detail' recipe_id=recipe.id %}">
+                            <h5>{{ recipe.name }}</h5>
+                        </a>
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <section class="cta-area bg-img bg-overlay" style="background-image: url(/static/img/bg-img/bg4.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- CTA Content -->
+                            <div class="cta-content text-center">
+                                <h2>Gluten Free Recipes</h2>
+                                <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque. Ut vulputate, lectus vel aliquam congue, risus leo elementum nibh</p>
+                                <a href="#" class="btn delicious-btn">Discover All the Recipes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+<!-- ##### Quote Subscribe Area Start ##### -->
+<section class="quote-subscribe-adds">
+    <div class="container">
+        <div class="row align-items-end">
+            <!-- Quote -->
+            <div class="col-12 col-lg-4">
+                <div class="quote-area text-center">
+                    <span>"</span>
+                    <h4>Nothing is better than going home to family and eating good food and relaxing</h4>
+                    <p>John Smith</p>
+                    <div class="date-comments d-flex justify-content-between">
+                        <div class="date">Yanvar 04, 2024</div>
+                        <div class="comments">2 Commentariyalar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-12 col-lg-4">
+                <div class="newsletter-area">
+                    <h4>Ijtimoiy tarmoqlarimizga obuna bo'ling</h4>
+                    <!-- Form -->
+                    <div class="newsletter-form bg-img bg-overlay" style="background-image: url(/static/img/bg-img/bg1.jpg);">
+                        <form action="https://t.me/Kyberphp" method="post">
+                            <button type="submit" class="btn delicious-btn w-100">Telegram</button>
+                        </form>
+                        <form action="https://instagram.com/shohijakhoon">
+                            <button type="submit" class="btn delicious-btn w-100">Instagram</button>
+                        </form>
+                        <p>Fusce nec ante vitae lacus aliquet vulputate. Donec sceleri sque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adds -->
+            <div class="col-12 col-lg-4">
+                <div class="delicious-add">
+                    <img src="/static/img/bg-img/add.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Quote Subscribe Area End ##### -->
+
+{% endblock content %}
