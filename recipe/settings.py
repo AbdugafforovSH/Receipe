@@ -132,5 +132,5 @@ LOGIN_URL = 'login'
 AUTH_USER_MODEL = 'home.User'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://receipe-uuwn.onrender.com',
+    '*',
 ]
